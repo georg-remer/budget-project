@@ -1,0 +1,5 @@
+[run]
+source = 
+	personal_budget/monthly_budget
+omit =
+	*/migrations/__init__.py

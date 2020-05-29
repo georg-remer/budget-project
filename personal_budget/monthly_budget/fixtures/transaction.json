@@ -1,0 +1,13 @@
+[{
+	"model": "monthly_budget.transaction",
+	"pk": 18,
+	"fields": {
+		"period": 6,
+		"outcome": 10,
+		"income": null,
+		"date": "2019-11-12",
+		"sum": "11.50",
+		"description": "\u0416\u0435\u0432\u0430\u0447\u043a\u0430",
+		"balance": "-11.50"
+	}
+}]

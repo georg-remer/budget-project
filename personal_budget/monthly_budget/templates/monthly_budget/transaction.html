@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'monthly_budget/style.css' %}">
+</head>
+<body>
+    <div class="main">
+        <div class="period">
+            <div class="period__header">
+                <h1>Period</h1>
+            </div>
+            <div class="period__list">
+                {% for period in periods %}
+                    <p><a href="{% url 'monthly_budget:main_period' period.pk %}">{{ period }}</a></p>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="transaction">
+            <div class="transaction-new">
+                <div class="transaction-new__header">
+                    <h1>Transaction</h1>
+                </div>
+                <div class="transaction-new__plate">
+                    <form class="plate__form" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <label for="transaction-date">Date:</label>
+                        <input class="form__input" id="transaction-date" type="date" name="date" required>
+                        <label for="transaction-amount">Sum:</label>
+                        <input class="form__input" id="transaction-amount" type="number" min="0" name="amount" required>
+                        <label for="description">Description:</label>
+                        <input class="form__input" id="description" type="text" name="description">
+                        <label for="outcome">Outcome:</label> 
+                        <select class="form__input" id="outcome" name="outcome">
+                            <option value="" selected>None</option>
+                            {% for category in categories %}
+                                <option value={{ category.id }}>{{ category.category_code }}. {{ category.category_name }}</option>
+                            {% endfor %}
+                        </select>    
+                        <label for="income">Income:</label>
+                        <select class="form__input" id="income" name="income">
+                            <option value="" selected>None</option>
+                            {% for category in categories %}
+                                <option value="{{ category.id }}">{{ category.category_code }}. {{ category.category_name }}</option>
+                            {% endfor %}
+                        </select> 
+                        <input class="form__input form__input_submit" id="save" type="submit" name="Save">
+                    </form>
+                </div>
+            </div>
+            <div class="transaction-list">
+                {% for date in dates %}
+                    <div class="transaction-list__date">
+                        <p>{{ date.transaction_date }}</p>
+                    </div>
+                        {% for transaction in transactions %}
+                            {% if transaction.transaction_date == date.transaction_date %}
+                                <div class="transaction-list__item">
+                                    <div class="item__info">
+                                        <div class="info__category">
+                                            {% firstof transaction.outcome.category_name transaction.income.category_name %}
+                                        </div>
+                                        <div class="info__description">
+                                            {{ transaction.description }}
+                                        </div>
+                                    </div>
+                                    <div class="item__sum">
+                                        {{ transaction.transaction_amount }}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="balance">
+            <div class="balance__header">
+                <h1>Balance</h1>
+            </div>
+            <div class="balance__category">
+                <h3>Total spent this month</h3>
+                <p>25000.35 out of 30000 planned</p>
+                <h3>Categories</h3>
+                <p>Food planned: 5000, spent: 2000, balance: 3000</p>
+                <p>Entertainment planned: 1000, spent: 1100, balance: -100</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

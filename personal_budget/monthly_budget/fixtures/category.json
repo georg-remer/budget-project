@@ -1,0 +1,113 @@
+[{
+	"model": "monthly_budget.category",
+	"pk": 7,
+	"fields": {
+		"category_code": 1,
+		"category_name": "Salary",
+		"default_planned_sum": null
+	}
+}, {
+	"model": "monthly_budget.category",
+	"pk": 9,
+	"fields": {
+		"category_code": 2,
+		"category_name": "Utilities",
+		"default_planned_sum": null
+	}
+}, {
+	"model": "monthly_budget.category",
+	"pk": 10,
+	"fields": {
+		"category_code": 3,
+		"category_name": "Groceries",
+		"default_planned_sum": null
+	}
+}, {
+	"model": "monthly_budget.category",
+	"pk": 11,
+	"fields": {
+		"category_code": 4,
+		"category_name": "Car",
+		"default_planned_sum": null
+	}
+}, {
+	"model": "monthly_budget.category",
+	"pk": 12,
+	"fields": {
+		"category_code": 5,
+		"category_name": "Fuel",
+		"default_planned_sum": null
+	}
+}, {
+	"model": "monthly_budget.category",
+	"pk": 13,
+	"fields": {
+		"category_code": 6,
+		"category_name": "Pocket Money",
+		"default_planned_sum": null
+	}
+}, {
+	"model": "monthly_budget.category",
+	"pk": 14,
+	"fields": {
+		"category_code": 7,
+		"category_name": "Health",
+		"default_planned_sum": null
+	}
+}, {
+	"model": "monthly_budget.category",
+	"pk": 15,
+	"fields": {
+		"category_code": 8,
+		"category_name": "Sliva",
+		"default_planned_sum": null
+	}
+}, {
+	"model": "monthly_budget.category",
+	"pk": 16,
+	"fields": {
+		"category_code": 9,
+		"category_name": "Entertainment",
+		"default_planned_sum": null
+	}
+}, {
+	"model": "monthly_budget.category",
+	"pk": 17,
+	"fields": {
+		"category_code": 10,
+		"category_name": "Clothes & Shoes",
+		"default_planned_sum": null
+	}
+}, {
+	"model": "monthly_budget.category",
+	"pk": 19,
+	"fields": {
+		"category_code": 11,
+		"category_name": "Vacation",
+		"default_planned_sum": null
+	}
+}, {
+	"model": "monthly_budget.category",
+	"pk": 20,
+	"fields": {
+		"category_code": 12,
+		"category_name": "Reserve",
+		"default_planned_sum": null
+	}
+}, {
+	"model": "monthly_budget.category",
+	"pk": 21,
+	"fields": {
+		"category_code": 13,
+		"category_name": "Loan",
+		"default_planned_sum": null
+	}
+}, {
+	"model": "monthly_budget.category",
+	"pk": 22,
+	"fields": {
+		"category_code": 14,
+		"category_name": "Savings",
+		"default_planned_sum": null
+	}
+}]
